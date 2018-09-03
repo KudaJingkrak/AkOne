@@ -5,7 +5,6 @@
 	_Color ("Color", Color) = (1,1,1,1)
 
 	// Add values to determine if outlining is enabled and outline color.
-	[PerRendererData] _Outline ("Outline", Float) = 0
 	[PerRendererData] _OutlineColor("Outline Color", Color) = (1,1,1,1)
 	}
 
@@ -49,7 +48,6 @@
 			};
 			
 			fixed4 _Color;
-			float _Outline;
 			fixed4 _OutlineColor;
 
 			v2f vert(appdata_t IN)
