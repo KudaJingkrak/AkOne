@@ -2,7 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bricks : MonoBehaviour {
+public class Brick : MonoBehaviour {
+
+	private SpriteRenderer _render;
+
+	void OnEnable() {
+		_render = GetComponent<SpriteRenderer>();
+	}
+	
+	void Awake() {
+		
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -11,6 +21,5 @@ public class Bricks : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 }
