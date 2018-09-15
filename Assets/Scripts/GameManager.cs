@@ -18,11 +18,11 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad(this.gameObject);
 	}
 
-	public List<Ball> GetBalls() {
+	public static List<Ball> GetBalls() {
 		return _instance._balls;
 	}
 
-	public Ball GetBall(int index = -1) {
+	public static Ball GetBall(int index = -1) {
 		if (index == -1) {
 			if(_instance._balls.Count > 0) {
 				return _instance._balls[0];
@@ -36,15 +36,15 @@ public class GameManager : MonoBehaviour {
 		return _instance._balls[index];
 	}
 
-	public void AddBall(Ball ball) {
+	public static void AddBall(Ball ball) {
 		_instance._balls.Add(ball);
 	}
 
-	public void RemoveBall(Ball ball) {
+	public static void RemoveBall(Ball ball) {
 		_instance._balls.Remove(ball);
 	}
 
-	public void RemoveBall(int index) {
+	public static void RemoveBall(int index) {
 		if(index < 0 || index > _instance._balls.Count) {
 			return;
 		}
@@ -52,11 +52,11 @@ public class GameManager : MonoBehaviour {
 		_instance._balls.RemoveAt(index);
 	}
 
-	public void ClearBalls() {
+	public static void ClearBalls() {
 		_instance._balls.Clear();
 	}
 
-	public int Score{
+	public static int Score{
 		get {
 			return _instance._score;
 		}
@@ -66,15 +66,15 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void AddScore(int number) {
+	public static void AddScore(int number) {
 		_instance._score += number;
 	}
 
-	public void AddCollisionCount() {
+	public static AddCollisionCount() {
 		_instance._collisionCount += 1.0f / _instance._balls.Count;
 	}
 
-	public void ClearCollisionCOunt() {
+	public static ClearCollisionCOunt() {
 		_instance._collisionCount = 0f;
 	}
 }
